@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Status Dashboard (Full Data with Alerts and Filters)</title>
+    <link rel="stylesheet" href="file.css">
+    <script src="file.js"></script>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <div class="header">
+            <h1>📑 License Status Dashboard (Full Data)</h1>
+            <div class="options-bar">
+                
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search (filters all tables)..." />
+                </div>
+                
+                <div class="filter-container">
+                    <select id="locationFilter">
+                        <option value="all">All Locations</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Cochin">Cochin</option>
+                        <option value="Chikaballapur">Chikaballapur</option>
+                        <option value="T. Begur">T. Begur</option>
+                    </select>
+                </div>
+
+                <div class="filter-container">
+                    <select id="statusFilter">
+                        <option value="all">All Statuses</option>
+                        <option value="EXPIRED">Expired</option>
+                        <option value="CRITICAL">Critical (0-30 days)</option>
+                        <option value="Expiring Soon">Expiring Soon (31-90 days)</option>
+                        <option value="OK">OK (> 90 days)</option>
+                        <option value="N/A">N/A (Missing/Applied)</option>
+                    </select>
+                </div>
+                
+                <button classs="btn btn-add" id="addLicenseBtn">➕ Add New License</button>
+            </div>
+        </div>
+
+        <div class="content-grid">
+
+            <div class="license-card">
+                <div class="card-header">Access Warehousing Pvt. Ltd. (AWPL)</div>
+                <div class="table-container">
+                    <table class="license-table">
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>License Status Alert</th> <th>Services</th>
+                                <th class="location-cell">Location / City</th>
+                                <th>Warehouse / Owner Name</th>
+                                <th>Warehouse Address</th>
+                                <th>Company Agreement Period</th>
+                                <th>Rental Agreement Period</th>
+                                <th>GST included</th>
+                                <th>FSSAI License No.</th>
+                                <th>Expiry Date</th>
+                                <th>Shop & Est. License No.</th>
+                                <th>Expiry Date</th>
+                                <th>CLRA No.</th>
+                                <th>Expiry Date</th>
+                                <th>Packing License No.</th>
+                                <th>RC Date</th>
+                                <th>Pest Control License</th>
+                                <th>Expiry Date</th>
+                                <th>Fire NOC</th>
+                                <th>Expiry Date</th>
+                                <th>TRADE License No.</th>
+                                <th>Expiry Date</th>
+                                <th>Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="data-row">
+                                <td>Access Warehousing Pvt. Ltd.</td>
+                                <td class="status-indicator"></td> <td>N/A</td>
+                                <td class="location-cell">Bangalore</td>
+                                <td>HEAD OFFICE</td>
+                                <td>#37/4, 2nd Floor, 80ft Road...</td>
+                                <td>N/A</td>
+                                <td></td>
+                                <td>YES</td>
+                                <td>11224332001073</td>
+                                <td class="expiry-date" data-expiry-type="fssai">validity till 09-10-2027</td>
+                                <td>10/100/CE/1288/2013</td>
+                                <td>02-01-2023 TO 31-12-2027</td>
+                                <td></td>
+                                <td></td>
+                                <td>N/A</td>
+                                <td>N/A</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>N/A</td>
+                                <td>N/A</td>
+                                <td></td>
+                            </tr>
+                            <tr class="data-row">
+                                <td>Amara Raja Energy & Mobility Ltd</td>
+                                <td class="status-indicator"></td> <td>WSP</td>
+                                <td class="location-cell">Bangalore</td>
+                                <td>Puttaraju</td>
+                                <td>Survey No.47/2 & 45/2, Railway Gollahally Post...</td>
+                                <td></td>
+                                <td></td>
+                                <td>YES</td>
+                                <td>N/A</td>
+                                <td class="expiry-date" data-expiry-type="fssai">N/A</td>
+                                <td>NML/GOL/S/0003/2020</td>
+                                <td>04-01-2025 TO 31-12-2027</td>
+                                <td></td>
+                                <td></td>
+                                <td>N/A</td>
+                                <td>N/A</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>010/2020-21</td>
+                                <td>31-03-2025</td>
+                                <td></td>
+                            </tr>
+                            <tr class="data-row">
+                                <td>Metro Cash & Carry India Pvt .Ltd</td>
+                                <td class="status-indicator"></td> <td>WSP</td>
+                                <td class="location-cell">Hyderabad</td>
+                                <td>Mahender reddy</td>
+                                <td>D.NO.3-125/12/1/1 AND A, THUMKUNTA...</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>13624034000641</td>
+                                <td class="expiry-date" data-expiry-type="fssai">16-09-2024 to 15-09-2026</td>
+                                <td>SEA/MED/ACL/PC/0939774/2024</td>
+                                <td>04-09-2024 to ...</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>TG_TL_2024_1231/0503</td>
+                                <td>2025-03-31</td>
+                                <td></td>
+                            </tr>
+                             <tr class="data-row">
+                                <td>Kiranakart Technologies Pvt LTd Grocery</td>
+                                <td class="status-indicator"></td> <td>WSP</td>
+                                <td class="location-cell">Hyderabad</td>
+                                <td>Egwood</td>
+                                <td>Sy No 129/2. Kandlakoi Village...</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>13624034000682</td>
+                                <td class="expiry-date" data-expiry-type="fssai">15-10-2025 to 14-10-2026</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>applied</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>TG_TL_2024_...</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="license-card">
+                <div class="card-header">K I Agribusiness (KI AGRI)</div>
+                <div class="table-container">
+                    <table class="license-table">
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>License Status Alert</th> <th>Warehouse / Owner Name</th>
+                                <th class="location-cell">Location / City</th>
+                                <th>Warehouse Address</th>
+                                <th>GST included</th>
+                                <th>FSSAI License No.</th>
+                                <th>Expiry Date</th>
+                                <th>Shop & Est. License No.</th>
+                                <th>Expiry Date</th>
+                                <th>Packing License No.</th>
+                                <th>RC Date</th>
+                                <th>Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="data-row">
+                                <td>K I Agribusiness Pvt. Ltd.</td>
+                                <td class="status-indicator"></td> <td>HEAD OFFICE</td>
+                                <td class="location-cell">Bangalore</td>
+                                <td>#37/4, 2nd Floor, 80ft Road, KHB Colony...</td>
+                                <td>YES</td>
+                                <td></td>
+                                <td class="expiry-date" data-expiry-type="fssai">N/A</td>
+                                <td></td>
+                                <td></td>
+                                <td>N/A</td>
+                                <td>N/A</td>
+                                <td></td>
+                            </tr>
+                            <tr class="data-row">
+                                <td>Metro Cash & Carry India Pvt .Ltd</td>
+                                <td class="status-indicator"></td> <td>Pilappa</td>
+                                <td class="location-cell">Bangalore</td>
+                                <td>SURVEY NO.27/14, CHIMASANDRA VILLAGE...</td>
+                                <td></td>
+                                <td>11224302001119</td>
+                                <td class="expiry-date" data-expiry-type="fssai">03-06-2025 to 06-06-2026</td>
+                                <td>29/CHE/CE/0013/2022</td>
+                                <td>31-12-2026</td>
+                                <td>CLM/PCR/CR-1145186/21-22</td>
+                                <td>2021-06-03</td>
+                                <td></td>
+                            </tr>
+                            <tr class="data-row">
+                                <td>Metro Cash & Carry India Pvt .Ltd</td>
+                                <td class="status-indicator"></td> <td>PRAKASH K R</td>
+                                <td class="location-cell">Chikaballapur</td>
+                                <td>Sy No. 231, Kasba Hobli, Tippenahalli...</td>
+                                <td></td>
+                                <td></td>
+                                <td class="expiry-date" data-expiry-type="fssai">N/A</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="data-row">
+                                <td>Metro Cash & Carry India Pvt .Ltd</td>
+                                <td class="status-indicator"></td> <td>Prakash U</td>
+                                <td class="location-cell">Chikaballapur</td>
+                                <td>SY NO 133/2, GANGANAMIDDE VILLAGE...</td>
+                                <td></td>
+                                <td>11224309000221</td>
+                                <td class="expiry-date" data-expiry-type="fssai">12-11-2025 to 12-11-2026</td>
+                                <td>CBP/GAN/CE/0001/2022</td>
+                                <td>31-12-2026</td>
+                                <td>N/A</td>
+                                <td>N/A</td>
+                                <td></td>
+                            </tr>
+                            <tr class="data-row">
+                                <td>General Mills</td>
+                                <td class="status-indicator"></td> <td>Puttaraju</td>
+                                <td class="location-cell">Bangalore</td>
+                                <td>SURVEY NO.44/2, 44/3A, RAILWAY GOLLHALLY...</td>
+                                <td></td>
+                                <td>11223303000277</td>
+                                <td class="expiry-date" data-expiry-type="fssai">14-02-2025 to 13-06-2026</td>
+                                <td></td>
+                                <td></td>
+                                <td>N/A</td>
+                                <td>N/A</td>
+                                <td></td>
+                            </tr>
+                            <tr class="data-row">
+                                <td>General Mills</td>
+                                <td class="status-indicator"></td> <td>Krishnamurthy</td>
+                                <td class="location-cell">Bangalore</td>
+                                <td>SY NO, 2 MALAGALA NAGARABHAVI 2ND...</td>
+                                <td></td>
+                                <td>11225332000250</td>
+                                <td class="expiry-date" data-expiry-type="fssai">06-03-2025 to 05-03-2026</td>
+                                <td></td>
+                                <td></td>
+                                <td>N/A</td>
+                                <td>N/A</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="license-card">
+                <div class="card-header">Repacker Status</div>
+                <div class="table-container">
+                    <table class="license-table">
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>License Status Alert</th> <th>Works</th>
+                                <th>Warehouse / Owner Name</th>
+                                <th class="location-cell">Location / City</th>
+                                <th>Warehouse Address</th>
+                                <th>FSSAI License No.</th>
+                                <th>Expiry Date</th>
+                                <th>Remarks</th>
+                                <th>Packing License No.</th>
+                                <th>RC Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="data-row">
+                                <td>Metro Cash & Carry India Pvt .Ltd</td>
+                                <td class="status-indicator"></td> <td>WSP</td>
+                                <td>N/A</td>
+                                <td class="location-cell">T. Begur</td>
+                                <td>#45/5B-1, Tonachinakuppe Village...</td>
+                                <td>11225303000105</td>
+                                <td class="expiry-date" data-expiry-type="fssai">18-02-2025 to 17-02-2026</td>
+                                <td>ACCESS WAREHOUSING</td>
+                                <td>yet to get applied copy</td>
+                                <td></td>
+                            </tr>
+                            <tr class="data-row">
+                                <td>Kiranakart Technologies Pvt LTd</td>
+                                <td class="status-indicator"></td> <td>WSP</td>
+                                <td>Ruchi Logistics</td>
+                                <td class="location-cell">Bangalore</td>
+                                <td>Survey No.13/5,13/6,13/7...</td>
+                                <td>11224303000361</td>
+                                <td class="expiry-date" data-expiry-type="fssai">19-06-2024 to 18-06-2025</td>
+                                <td>ACCESS WAREHOUSING</td>
+                                <td>DCLM/PCR/CR-1145582/22-23</td>
+                                <td>2022-07-05</td>
+                            </tr>
+                            <tr class="data-row">
+                                <td>Kiranakart Technologies Pvt LTd</td>
+                                <td class="status-indicator"></td> <td>WSP</td>
+                                <td>Krishnappa / Manjunath</td>
+                                <td class="location-cell">Bangalore</td>
+                                <td>Survey No. 88/2, 88/8 , 88/7 and 90/1...</td>
+                                <td>11225304000100</td>
+                                <td class="expiry-date" data-expiry-type="fssai">24-01-2025 to 21-01-2026</td>
+                                <td>ACCESS WAREHOUSING</td>
+                                <td>yet to get applied copy</td>
+                                <td></td>
+                            </tr>
+                            <tr class="data-row">
+                                <td>Kiranakart Technologies Pvt LTd FnV</td>
+                                <td class="status-indicator"></td> <td>WSP</td>
+                                <td>Ashwin</td>
+                                <td class="location-cell">Chennai</td>
+                                <td>No.24, Vanagaram Ambattur Road...</td>
+                                <td>DIRECT</td>
+                                <td class="expiry-date" data-expiry-type="fssai">25-06-2024 to 24-06-2025</td>
+                                <td>ACCESS WAREHOUSING</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="data-row">
+                                <td>Metro Cash & Carry India Pvt .Ltd</td>
+                                <td class="status-indicator"></td> <td>WSP</td>
+                                <td>Mahender reddy</td>
+                                <td class="location-cell">Hyderabad</td>
+                                <td>D.NO.3-125/12/1/1 AND A, THUMKUNTA...</td>
+                                <td>13624034000641</td>
+                                <td class="expiry-date" data-expiry-type="fssai">16-09-2024 to 15-09-2026</td>
+                                <td>ACCESS WAREHOUSING</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="data-row">
+                                <td>Kiranakart Technologies Pvt LTd FnV</td>
+                                <td class="status-indicator"></td> <td>WSP</td>
+                                <td></td>
+                                <td class="location-cell">Cochin</td>
+                                <td>1/467, Seminary Road, Thottakkattukara...</td>
+                                <td>11324007002029</td>
+                                <td class="expiry-date" data-expiry-type="fssai">25-10-2024 to 24-10-2025</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
